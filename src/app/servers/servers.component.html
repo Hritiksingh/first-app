@@ -27,4 +27,13 @@
 <p *ngIf="serverCreated; else noServer">server Was Created, server name is {{ serverName }}</p>
 <ng-template #noServer>
         <p>No, server Was Created.</p>
-</ng-template>
+</ng-template> 
+
+<hr>
+<!-- <button class="btn btn-primary" (click)="showPassword = !showPassword">Display Details</button> -->
+<button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+<p *ngIf="showPassword === true">Secret Password = Tuna</p>
+<div *ngFor="let logItem of log; let i = index"
+        [ngStyle]="{backgroundColor: i %2 ===0 ? 'blue' : 'skyblue'}"
+        [ngClass]="{'white-text': i % 5 === 0}"
+>{{ log[i] }}</div>
